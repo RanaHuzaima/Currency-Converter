@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to right, #1f4037, #99f2c8);
+}
+.main {
+  height: auto;
+  width: auto;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.41);
+  border-radius: 16px;
+  backdrop-filter: blur(5.5px);
+  -webkit-backdrop-filter: blur(5.5px);
+  box-shadow: 1px 2px 48px -6px rgba(255, 255, 255, 0.66);
+  -webkit-box-shadow: 1px 2px 48px -6px rgba(255, 255, 255, 0.66);
+  -moz-box-shadow: 1px 2px 48px -6px rgba(255, 255, 255, 0.66);
+}

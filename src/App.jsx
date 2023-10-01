@@ -1,14 +1,15 @@
 import React from 'react'
 import CurrencyRow from './Component/CurrencyRow'
+import  './App.css'
 
 function App() {
   return (
-    <>
-      <h1>Currency Converter</h1>
+    <div className='main'>
+    <h1>Currency Converter</h1>
       <CurrencyRow/>
-      <div>=</div>
+      <div className='equal'>=</div>
       <CurrencyRow/>
-    </>
+    </div>
   )
 }
 
