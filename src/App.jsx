@@ -34,18 +34,29 @@ function App() {
     .catch("Something went Wrong with api")
   },[])
 
+  function handleFromAmountChange(e){
+    setAmount(e.target.value)
+    setAmountInFrom(true)
+  }
+  function handleToAmountChange(e){
+    setAmount(e.target.value)
+    setAmountInFrom(false)
+  }
+
   return (
     <div className='main'>
     <h1>Currency Converter</h1>
       <CurrencyRow currencyOption={currencyOption}
       selectedCurrency={fromCurrency}
       onchanged={e => setFromCurrency(e.target.value)}
+      onchangeamount={handleFromAmountChange}
       amount={fromamount}
       />
       <div className='equal'>=</div>
       <CurrencyRow currencyOption={currencyOption}
       selectedCurrency={toCurrency}
       onchanged={e => setToCurrency(e.target.value)}
+      onchangeamount={handleToAmountChange}
       amount={toamount}
       />
     </div>
