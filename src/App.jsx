@@ -8,6 +8,19 @@ function App() {
   const [currencyOption, setCurrencyOption] = useState([])
   const [fromCurrency, setFromCurrency] = useState()
   const [toCurrency, setToCurrency] = useState()
+  const [exchangeRate, setExchangeRate] = useState()
+  const [amount,setAmount] = useState(1)
+  const [amountInFrom,setAmountInFrom] = useState(true)
+
+  let toamount, fromamount
+  if(amountInFrom){
+    fromamount = amount
+    toamount = amount * exchangeRate
+  } else{
+    toamount = amount
+    fromCurrency = amount / exchangeRate
+  }
+
   useEffect(()=>{
     fetch(Base_URl)
     .then(res => res.json())
@@ -16,6 +29,7 @@ function App() {
       setCurrencyOption([...Object.keys(data.conversion_rates)])
       setFromCurrency(data.base_code)
       setToCurrency(firstCurrency)
+      setExchangeRate(data.conversion_rates[firstCurrency])
     })
     .catch("Something went Wrong with api")
   },[])
@@ -26,13 +40,13 @@ function App() {
       <CurrencyRow currencyOption={currencyOption}
       selectedCurrency={fromCurrency}
       onchanged={e => setFromCurrency(e.target.value)}
-
+      amount={fromamount}
       />
       <div className='equal'>=</div>
       <CurrencyRow currencyOption={currencyOption}
       selectedCurrency={toCurrency}
       onchanged={e => setToCurrency(e.target.value)}
-      
+      amount={toamount}
       />
     </div>
   )
