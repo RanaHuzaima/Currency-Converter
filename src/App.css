@@ -69,6 +69,7 @@ select{
     overflow: hidden;
     transition: all 100ms ease-in-out;
     margin-left: 5px;
+    outline: none;
 
 }
 select:focus {
