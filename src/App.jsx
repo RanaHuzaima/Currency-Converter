@@ -37,7 +37,7 @@ function App() {
 
   useEffect(()=>{
     if (fromCurrency != null && toCurrency != null){
-      fetch(`${Base_URl}?base=${fromCurrency}&symbols=${toCurrency}`)
+      fetch(`https://v6.exchangerate-api.com/v6/7288dc67dc3abe9304365694/latest/${fromCurrency}`)
       .then(res => res.json())
       .then(data => setExchangeRate(data.conversion_rates[toCurrency]))
     }
