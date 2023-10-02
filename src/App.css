@@ -37,7 +37,7 @@ input{
     
     position: relative;
     cursor: text;
-    font-size: 14px;
+    font-size: 20px;
     line-height: 20px;
     padding: 0 16px;
     height: 48px;
@@ -57,7 +57,7 @@ input:focus {
 select{ 
     position: relative;
     cursor: text;
-    font-size: 14px;
+    font-size: 20px;
     line-height: 20px;
     padding: 0 16px;
     height: 48px;
